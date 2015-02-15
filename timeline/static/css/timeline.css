@@ -1,0 +1,33 @@
+ul.timeline {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  list-style-type: none;
+}
+ul.timeline h1 {
+  text-align: center;
+  list-style-type: none;
+}
+ul.timeline li {
+  clear: both;
+  border-top: 1px solid #cccccc;
+}
+ul.timeline li span.time {
+  font-size: 18px;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+ul.timeline li span.title {
+  font-size: 20px;
+  float: left;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+ul.timeline li pre {
+  clear: both;
+}
+ul.timeline h1:hover, ul.timeline li span.title:hover {
+  color: red;
+}
