@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{{.page}}</title>
+
+  <!-- 引入 Bootstrap -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  {{.HtmlHead}}
+  {{str2html "<!--[if lt IE 9]>"}}
+      <script src="/static/js/html5shiv.min.js"></script>
+      <script src="/static/js/respond.min.js"></script>
+  {{str2html "<![endif]-->"}}
+
+  <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+  <script type="text/javascript" src="/static/js/jquery-1.11.2.min.js"></script>
+  <!-- 包括所有已编译的插件 -->
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!-- 菜单栏 -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">打开导航</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">首页</a>
+      </div>
+      {{.Menu}}
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- 正文 -->
+  {{.LayoutContent}}
+  {{.Scripts}}
+</body>
+
+</html>

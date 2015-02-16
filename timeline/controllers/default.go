@@ -15,12 +15,17 @@ func (c *MainController) Get() {
 
 	tl := models.NewTimeline()
 	tl.SetTitle(apptitle)
-
 	tl.LoadDB(dbname, -1, -1)
 
+	c.Data["page"] = "timeline"
 	c.Data["ver"] = &tl
 
-	c.TplNames = "index.tpl"
+	c.Layout = "layout.html"
+	c.TplNames = "timeline/index.tpl"
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["HtmlHead"] = "timeline/html_head.tpl"
+	c.LayoutSections["Menu"] = "timeline/menu.tpl"
+	c.LayoutSections["Scripts"] = "timeline/scripts.tpl"
 }
 
 func (c *MainController) Post() {

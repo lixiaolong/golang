@@ -1,10 +1,11 @@
 package routers
 
 import (
-	"github.com/lixiaolong/golang/timeline/controllers"
 	"github.com/astaxie/beego"
+	"github.com/lixiaolong/golang/timeline/controllers"
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+	beego.Router("/", &controllers.MainController{})
+	beego.Router("/tree", &controllers.TreeController{})
 }
