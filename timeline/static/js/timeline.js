@@ -8,4 +8,14 @@ $(document).ready(function() {
   tl_title.click(function() {
     $(this).next().toggle(400);
   });
+
+  // 要先引用datapicker
+  $("#newTime").datetimepicker({
+    format: 'yyyy-mm-dd',
+    autoclose: true,
+    minView: 2,
+    todayBtn: "linked",
+    todayHighlight: true,
+    language: "zh-CN",
+  });
 });
