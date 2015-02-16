@@ -10,18 +10,13 @@ type MainController struct {
 }
 
 func (c *MainController) Get() {
-	//dbname, _ := beego.Config("string", "dbname", "models/timeline.db")
-	//apptitle, _ := beego.Config("string", "apptitle", "记录")
-	//apptitle := "版本修改记录"
-	//dbname := "models/timeline.db"
-
 	dbname := beego.AppConfig.String("dbname")
 	apptitle := beego.AppConfig.String("apptitle")
 
 	tl := models.NewTimeline()
 	tl.SetTitle(apptitle)
 
-	tl.LoadDB(dbname, 0, 10)
+	tl.LoadDB(dbname, -1, -1)
 
 	c.Data["ver"] = &tl
 
@@ -29,7 +24,6 @@ func (c *MainController) Get() {
 }
 
 func (c *MainController) Post() {
-	//apptitle, _ := beego.Config("string", "apptitle", "记录")
 	dbname := beego.AppConfig.String("dbname")
 	apptitle := beego.AppConfig.String("apptitle")
 
