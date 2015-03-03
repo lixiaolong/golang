@@ -4,7 +4,7 @@
       <li>
         <span class="time">{{$val.Time}}</span>
         <span class="title">{{$val.Title}}</span>
-        <pre class="content">{{$val.Details}}</pre>
+        <div class="content">{{$val.Details | markdown | str2html}}</div>
       </li>{{end}}
     </ul>
   </div>

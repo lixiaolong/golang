@@ -6,6 +6,6 @@ import (
 )
 
 func main() {
+	beego.AddFuncMap("markdown", Markdown)
 	beego.Run()
-
 }

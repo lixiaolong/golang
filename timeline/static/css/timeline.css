@@ -1,31 +1,33 @@
 ul.timeline {
   list-style-type: none;
 }
-ul.timeline h1 {
+ul.timeline > h1 {
   font-size: 24px;
   text-align: center;
   list-style-type: none;
 }
-ul.timeline li {
+ul.timeline > li {
   clear: both;
   border-top: 1px solid #cccccc;
 }
-ul.timeline li span.time {
+ul.timeline > li .time {
   font-size: 18px;
   float: right;
   margin-top: 10px;
   margin-bottom: 5px;
 }
-ul.timeline li span.title {
+ul.timeline > li .title {
   font-size: 18px;
   float: left;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
-ul.timeline li pre {
+ul.timeline > li .content {
   clear: both;
   font-size: 16px;
+  border: 1px solid black;
+  padding: 10px;
 }
-ul.timeline h1:hover, ul.timeline li span.title:hover {
+ul.timeline h1:hover, ul.timeline li .title:hover {
   color: red;
 }
