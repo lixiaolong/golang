@@ -10,7 +10,6 @@
 
   <!-- 引入 Bootstrap -->
   <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  {{.HtmlHead}}
   {{str2html "<!--[if lt IE 9]>"}}
       <script src="/static/js/html5shiv.min.js"></script>
       <script src="/static/js/respond.min.js"></script>
@@ -20,6 +19,8 @@
   <script type="text/javascript" src="/static/js/jquery-1.11.2.min.js"></script>
   <!-- 包括所有已编译的插件 -->
   <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+  {{.HtmlHead}}
 </head>
 
 <body>
@@ -36,7 +37,14 @@
         </button>
         <a class="navbar-brand" href="/">首页</a>
       </div>
-      {{.Menu}}
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="menulist">
+        <ul class="nav navbar-nav">
+          <li><a href="/">修改记录</a></li>
+          <li><a href="/tree">资产管理</a></li>
+          <li><a href="/vuldesc">漏扫库</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
 

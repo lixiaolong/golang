@@ -12,6 +12,7 @@ type MainController struct {
 func (c *MainController) Get() {
 	dbname := beego.AppConfig.String("dbname")
 	apptitle := beego.AppConfig.String("apptitle")
+	var page = "timeline"
 
 	tl := models.NewTimeline()
 	tl.SetTitle(apptitle)
@@ -21,11 +22,10 @@ func (c *MainController) Get() {
 	c.Data["ver"] = &tl
 
 	c.Layout = "layout.html"
-	c.TplNames = "timeline/index.tpl"
+	c.TplNames = page + "/mainpage.tpl"
 	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["HtmlHead"] = "timeline/html_head.tpl"
-	c.LayoutSections["Menu"] = "timeline/menu.tpl"
-	c.LayoutSections["Scripts"] = "timeline/scripts.tpl"
+	c.LayoutSections["HtmlHead"] = page + "/html_head.tpl"
+	c.LayoutSections["Scripts"] = page + "/scripts.tpl"
 }
 
 func (c *MainController) Post() {
